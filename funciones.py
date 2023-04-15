@@ -3,9 +3,9 @@ import pandas as pd
 
 columnas_csv=["Nombre","Edad","Peso","Altura","IMC"]
 
-peso_Actual=0
-altura_Actual=0
-edad_Actual=0
+peso_Actual=70
+altura_Actual=1.7
+edad_Actual=15
 imc_Actual=0
 
 def guardar_csv():
@@ -15,12 +15,20 @@ def guardar_csv():
     global altura_Actual
     global edad_Actual
     global imc_Actual
-    df = pd.DataFrame(columns=columnas_csv)
-    # Obtener el índice de la última fila del DataFrame
-    ultimo_indice = df.index[-1]
+    archivo=".\Datos_imc.csv"
+    
     Nombre=input("Nombre con el que desea guardar: ")
-    df.loc[ultimo_indice + 1] = [Nombre, edad_Actual, peso_Actual, altura_Actual, imc_Actual]
-    df.to_csv('Datos_imc.csv', index=False)
+
+    if os.path.exists(archivo):
+        df=pd.read_csv(archivo)
+        print("Existe")
+        # Crear una nueva fila como un diccionario
+        df.loc[0] = [Nombre, edad_Actual, peso_Actual, altura_Actual, imc_Actual]
+        df.to_csv('Datos_imc.csv', index=False, mode="a",header=False)
+    else:
+        df = pd.DataFrame(columns=columnas_csv)
+        df.loc[0] = [Nombre, edad_Actual, peso_Actual, altura_Actual, imc_Actual]
+        df.to_csv('Datos_imc.csv', index=False, mode="a")
 
 def limpiar_consola():
     os.system('cls')
