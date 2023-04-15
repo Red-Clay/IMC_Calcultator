@@ -1,17 +1,13 @@
-import os
-
+import funciones
 peso_actual=0
 altura_Actual=0
 edad_Actual=0
-imc_Actual=0
+funciones_Actual=0
 
-def limpiar_consola():
-    os.system('cls')
-
-limpiar_consola()
+funciones.limpiar_consola()
 
 def Act_peso(P):
-    limpiar_consola()
+    funciones.limpiar_consola()
     global peso_actual
     peso_actual=P
     Respuesta=f"La Peso ha sido actualizada a:" + str(peso_actual) + "Kg"
@@ -19,7 +15,7 @@ def Act_peso(P):
     print(Respuesta)
     print("------------------------------")
 def Act_altura(A):
-    limpiar_consola()
+    funciones.limpiar_consola()
     global altura_Actual
     altura_Actual=A
     Respuesta=f"La Altura ha sido actualizada a:" + str(altura_Actual) + "M"
@@ -27,7 +23,7 @@ def Act_altura(A):
     print(Respuesta)
     print("------------------------------")
 def Act_edad(E):
-    limpiar_consola()
+    funciones.limpiar_consola()
     global edad_Actual
     edad_Actual = E
     Respuesta=f"La Edad ha sido actualizada a:" + str(edad_Actual) + "Años"
@@ -36,17 +32,17 @@ def Act_edad(E):
     print("------------------------------")
 
 def Ver_perfil():
-    limpiar_consola()
+    funciones.limpiar_consola()
     print(f"Peso Actual: {peso_actual} Kg\n")
     print(f"Altura Actual: {altura_Actual}\n")
     print(f"Edad Actual: {edad_Actual}\n")
-    print(f"IMC Actual: {imc_Actual}\n")    
+    print(f"funciones Actual: {funciones_Actual}\n")    
 
-def Cal_IMC(peso,altura):
-    limpiar_consola()
-    global imc_Actual
-    imc_Actual = float(peso)/(float(altura)*float(altura))
-    Respuesta=f"Su IMC es de :" + str(imc_Actual)
+def Cal_funciones(peso,altura):
+    funciones.limpiar_consola()
+    global funciones_Actual
+    funciones_Actual = float(peso)/(float(altura)*float(altura))
+    Respuesta=f"Su funciones es de :" + str(funciones_Actual)
     return Respuesta
 
 while True:
@@ -54,7 +50,7 @@ while True:
     print(f"1-Añade tu peso (Kg = {peso_actual} )")
     print(f"2-Añade tu Altura (M = {altura_Actual} )")
     print(f"3-Añade tu edad (años = {edad_Actual} )")
-    print(f"4-Calcula tu IMC  (Indice de Masa Corporal = {imc_Actual} )")
+    print(f"4-Calcula tu funciones  (Indice de Masa Corporal = {funciones_Actual} )")
     print("5-Respuesta completa de tu perfil actual")
     print("6-Salir")
 
@@ -72,7 +68,7 @@ while True:
         i_edad = int(input("Ingresa la edad: "))
         Act_edad(i_edad)
     elif opcion == 4:
-        print(f"{Cal_IMC(peso_actual,altura_Actual)}")
+        print(f"{Cal_funciones(peso_actual,altura_Actual)}")
     elif opcion == 5:
         Ver_perfil()
     elif opcion == 6:
