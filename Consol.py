@@ -37,7 +37,7 @@ def Act_edad(E):
 
 def Ver_perfil():
     limpiar_consola()
-    print(f"Peso Actual: {peso_actual}\n")
+    print(f"Peso Actual: {peso_actual} Kg\n")
     print(f"Altura Actual: {altura_Actual}\n")
     print(f"Edad Actual: {edad_Actual}\n")
     print(f"IMC Actual: {imc_Actual}\n")    
@@ -51,10 +51,10 @@ def Cal_IMC(peso,altura):
 
 while True:
     print("------------------------------")
-    print("1-Añade tu peso (Kg)")
-    print("2-Añade tu Altura (M)")
-    print("3-Añade tu edad ()")
-    print("4-Calcula tu IMC  (Indice de Masa Corporal)")
+    print(f"1-Añade tu peso (Kg = {peso_actual} )")
+    print(f"2-Añade tu Altura (M = {altura_Actual} )")
+    print(f"3-Añade tu edad (años = {edad_Actual} )")
+    print(f"4-Calcula tu IMC  (Indice de Masa Corporal = {imc_Actual} )")
     print("5-Respuesta completa de tu perfil actual")
     print("6-Salir")
 
