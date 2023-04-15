@@ -1,17 +1,16 @@
 import funciones
 
-
-
 funciones.limpiar_consola()
 
 while True:
     print("------------------------------")
-    print(f"1-Añade tu peso (Kg )")
-    print(f"2-Añade tu Altura (M )")
-    print(f"3-Añade tu edad (años )")
-    print(f"4-Calcula tu funciones  (Indice de Masa Corporal = )")
+    print(f"1-Añade tu peso (Kg = {funciones.peso_Actual} )")
+    print(f"2-Añade tu Altura (M = {funciones.altura_Actual} )")
+    print(f"3-Añade tu edad (años = {funciones.edad_Actual} )")
+    print(f"4-Calcula tu IMC  (Indice de Masa Corporal = {funciones.imc_Actual} )")
     print("5-Respuesta completa de tu perfil actual")
-    print("6-Salir")
+    print("6-guardar perfil")
+    print("7-Salir")
 
     print("------------------------------")
 #Un añadido copiado, pero con flujos logicos faciles de entender
@@ -31,4 +30,6 @@ while True:
     elif opcion == 5:
         funciones.Ver_perfil()
     elif opcion == 6:
+        funciones.guardar_csv()
+    elif opcion == 7:
         break
