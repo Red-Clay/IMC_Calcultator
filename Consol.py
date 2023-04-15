@@ -10,7 +10,8 @@ while True:
     print(f"4-Calcula tu IMC  (Indice de Masa Corporal = {funciones.imc_Actual} )")
     print("5-Respuesta completa de tu perfil actual")
     print("6-guardar perfil")
-    print("7-Salir")
+    print("7-ver csv")
+    print("8-Salir")
 
     print("------------------------------")
 #Un añadido copiado, pero con flujos logicos faciles de entender
@@ -32,4 +33,6 @@ while True:
     elif opcion == 6:
         funciones.guardar_csv()
     elif opcion == 7:
+        funciones.vercsv()
+    elif opcion == 8:
         break

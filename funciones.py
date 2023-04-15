@@ -16,7 +16,7 @@ def guardar_csv():
     global edad_Actual
     global imc_Actual
     archivo=".\Datos_imc.csv"
-    
+
     Nombre=input("Nombre con el que desea guardar: ")
 
     if os.path.exists(archivo):
@@ -33,7 +33,10 @@ def guardar_csv():
 def limpiar_consola():
     os.system('cls')
 
-
+def vercsv():
+    limpiar_consola()
+    df=pd.read_csv("Datos_imc.csv")
+    print(df)
 def Act_peso(P):
     limpiar_consola()
     global peso_Actual
