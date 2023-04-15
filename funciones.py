@@ -41,9 +41,11 @@ def Ver_perfil():
     print(f"Edad Actual: {edad_Actual}\n")
     print(f"IMC Actual: {imc_Actual}\n")    
 
-def Cal_IMC(peso,altura):
+def Cal_IMC():
+    global peso_actual
+    global altura_Actual
     limpiar_consola()
     global imc_Actual
-    imc_Actual = float(peso)/(float(altura)*float(altura))
+    imc_Actual = float(peso_actual)/(float(altura_Actual)*float(altura_Actual))
     Respuesta=f"Su IMC es de :" + str(imc_Actual)
     return Respuesta
