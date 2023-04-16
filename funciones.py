@@ -23,10 +23,10 @@ def guardar_csv():
         df=pd.read_csv(archivo)
         #BenditoMetodo
         lastvalidindex=df.last_valid_index()
-        lastrow=lastvalidindex+1
-        print(lastrow)
+        lastindex=lastvalidindex+1
+        #print(lastindex)
         # Crear una nueva fila como un diccionariohow to deal with convert in python
-        df.loc[lastrow] = [Nombre, edad_Actual, peso_Actual, altura_Actual, imc_Actual]
+        df.loc[lastindex] = [Nombre, edad_Actual, peso_Actual, altura_Actual, imc_Actual]
         df.to_csv('Datos_imc.csv', index=False)
     else:
         df = pd.DataFrame(columns=columnas_csv)
@@ -54,9 +54,15 @@ def limpiar_consola():
     os.system('cls')
 
 def vercsv():
-    limpiar_consola()
-    df=pd.read_csv("Datos_imc.csv")
-    print(df)
+    archivo="Datos_imc.csv"
+    if os.path.exists(archivo):
+        limpiar_consola()
+        df=pd.read_csv(archivo)
+        print(df)
+    else:
+        limpiar_consola()
+        print(f"No se encontro o no se ha creado el archivo {archivo}")
+
 def Act_peso(P):
     limpiar_consola()
     global peso_Actual
@@ -65,6 +71,7 @@ def Act_peso(P):
     print("------------------------------")
     print(Respuesta)
     print("------------------------------")
+
 def Act_altura(A):
     limpiar_consola()
     global altura_Actual
@@ -73,6 +80,7 @@ def Act_altura(A):
     print("------------------------------")
     print(Respuesta)
     print("------------------------------")
+
 def Act_edad(E):
     limpiar_consola()
     global edad_Actual
