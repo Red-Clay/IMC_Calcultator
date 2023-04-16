@@ -24,13 +24,15 @@ while True:
     print("------------------------------")
     if opcion == 1:
         _inp = input("Ingresa el peso: ")
-        i_peso=funciones.return_range(_inp,12,60)
+        i_peso=funciones.return_range(_inp,0,100)
         funciones.Act_peso(i_peso)
     elif opcion == 2:
-        i_altura = float(input("Ingresa el altura: "))
+        _alt = input("Ingresa el altura: ")
+        i_altura=funciones.return_range(_alt,0,4)
         funciones.Act_altura(i_altura)
     elif opcion == 3:
-        i_edad = int(input("Ingresa la edad: "))
+        _ed = input("Ingresa la edad: ")
+        i_edad=funciones.return_range(_ed,0,100)
         funciones.Act_edad(i_edad)
     elif opcion == 4:
         print(f"{funciones.Cal_IMC()}")

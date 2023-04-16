@@ -21,14 +21,17 @@ def guardar_csv():
 
     if os.path.exists(archivo):
         df=pd.read_csv(archivo)
-        print("Existe")
+        #BenditoMetodo
+        lastvalidindex=df.last_valid_index()
+        lastrow=lastvalidindex+1
+        print(lastrow)
         # Crear una nueva fila como un diccionariohow to deal with convert in python
-        df.loc[0] = [Nombre, edad_Actual, peso_Actual, altura_Actual, imc_Actual]
-        df.to_csv('Datos_imc.csv', index=False, mode="a",header=False)
+        df.loc[lastrow] = [Nombre, edad_Actual, peso_Actual, altura_Actual, imc_Actual]
+        df.to_csv('Datos_imc.csv', index=False)
     else:
         df = pd.DataFrame(columns=columnas_csv)
         df.loc[0] = [Nombre, edad_Actual, peso_Actual, altura_Actual, imc_Actual]
-        df.to_csv('Datos_imc.csv', index=False, mode="a")
+        df.to_csv('Datos_imc.csv', index=False)
 
 def return_range(valor,min,max):
     tipo=type(valor)
