@@ -15,10 +15,16 @@ while True:
 
     print("------------------------------")
 #Un añadido copiado, pero con flujos logicos faciles de entender
-    opcion = int(input("Elige una opción: "))
+    opc = input("Elige una opción: ")
+    if opc in ["1","2","3","4","5","6","7","8","9"]:
+        opcion = int(opc)
+    else:
+        opcion=0
+        funciones.limpiar_consola()
     print("------------------------------")
     if opcion == 1:
-        i_peso = float(input("Ingresa el peso: "))
+        _inp = input("Ingresa el peso: ")
+        i_peso=funciones.return_range(_inp,12,60)
         funciones.Act_peso(i_peso)
     elif opcion == 2:
         i_altura = float(input("Ingresa el altura: "))

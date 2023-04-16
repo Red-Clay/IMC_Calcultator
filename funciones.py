@@ -22,13 +22,30 @@ def guardar_csv():
     if os.path.exists(archivo):
         df=pd.read_csv(archivo)
         print("Existe")
-        # Crear una nueva fila como un diccionario
+        # Crear una nueva fila como un diccionariohow to deal with convert in python
         df.loc[0] = [Nombre, edad_Actual, peso_Actual, altura_Actual, imc_Actual]
         df.to_csv('Datos_imc.csv', index=False, mode="a",header=False)
     else:
         df = pd.DataFrame(columns=columnas_csv)
         df.loc[0] = [Nombre, edad_Actual, peso_Actual, altura_Actual, imc_Actual]
         df.to_csv('Datos_imc.csv', index=False, mode="a")
+
+def return_range(valor,min,max):
+    tipo=type(valor)
+    try:
+        valor = float(valor)
+        if valor >= float(min) and valor <= float(max): 
+           return valor
+        else:
+            #print(f"Rango entre {min}-{max}")
+            return 0
+    except ValueError:
+        limpiar_consola()
+        return 0
+    #if (valor > min and valor < max) and (tipo=="<class 'float'>"): 
+     #  #re(tipo)
+    #else:
+        #return 0
 
 def limpiar_consola():
     os.system('cls')
