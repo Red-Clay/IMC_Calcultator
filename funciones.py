@@ -60,7 +60,12 @@ def return_range(min,max,valor):
         #return 0
 
 def limpiar_consola():
-    os.system('cls')
+    _so=os.name 
+    if _so == "nt":
+        os.system('cls')
+    elif _so == "posix":
+        os.system('clear')
+    #print(_so)
 
 def vercsv():
     archivo="Datos_imc.csv"
