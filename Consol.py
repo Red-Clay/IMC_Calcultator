@@ -1,20 +1,21 @@
 import funciones
 funciones.limpiar_consola()
 while True:
-    print("------------------------------")
-    print(f"1-Añade tu peso (Kg = {funciones.peso_Actual} )")
-    print(f"2-Añade tu Altura (M = {funciones.altura_Actual} )")
-    print(f"3-Añade tu edad (años = {funciones.edad_Actual} )")
-    print(f"4-Calcula tu IMC  (Indice de Masa Corporal = {funciones.imc_Actual} )")
-    print("5-Respuesta completa de tu perfil actual")
-    print("6-guardar perfil")
-    print("7-ver csv")
+
+    print("-"*40)
+    print(f"1-Peso....(Kilogramos = {funciones.peso_Actual} )")
+    print(f"2-Altura..(Metros = {funciones.altura_Actual} )")
+    print(f"3-Edad....(años = {funciones.edad_Actual} )")
+    print(f"4-IMC.....(Indice de Masa Corporal = {funciones.imc_Actual} )")
+    print("5-Perfil")
+    print("6-Save")
+    print("7-CSV")
     print("8-Salir")
 
-    print("------------------------------")
+    print("-"*40)
 #Un añadido copiado, pero con flujos logicos faciles de entender
     opc = input("Elige una opción: ")
-    if opc in ["1","2","3","4","5","6","7","8","9"]:
+    if opc in ["1","2","3","4","5","6","7","8"]:
         opcion = int(opc)
     else:
         opcion=0

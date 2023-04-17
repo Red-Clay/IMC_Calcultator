@@ -1,11 +1,12 @@
 import os
 import pandas as pd
-columnas_csv=["Nombre","Edad","Peso","Altura","IMC"]
+columnas_csv=["Nombre","Edad","Peso","Altura","IMC","Nivel de peso"]
 
 peso_Actual=70
 altura_Actual=1.7
 edad_Actual=15
 imc_Actual=0
+nivel_peso=0
 
 def guardar_csv():
     limpiar_consola()
@@ -14,6 +15,7 @@ def guardar_csv():
     global altura_Actual
     global edad_Actual
     global imc_Actual
+    global nivel_peso
     archivo=".\Datos_imc.csv"
 
     Nombre=input("Nombre con el que desea guardar: ")
@@ -35,14 +37,14 @@ def guardar_csv():
 def return_range(min,max,valor):
     limpiar_consola()
     try:
-        valor=int(valor)
+        valor=float(valor)
         
     except ValueError:
         print("Valor incorrecto")
     tipo=type(valor)
     #print(tipo)
     
-    if isinstance(valor,int):
+    if isinstance(valor,int) or isinstance(valor,float) :
         valor = float(valor)
         if valor >= float(min) and valor <= float(max): 
             return valor
@@ -75,27 +77,33 @@ def Act_peso(P):
     global peso_Actual
     peso_Actual=P
     Respuesta=f"La Peso ha sido actualizada a:" + str(peso_Actual) + "Kg"
-    print("------------------------------")
-    print(Respuesta)
-    print("------------------------------")
+
+    marco = "+{:-^48}+".format('')
+    mensaje_central = "|{:^48}|".format(Respuesta)
+
+    print(marco)
+    print(mensaje_central)
+    print(marco)
+
+    #print("------------------------------")
 
 def Act_altura(A):
     limpiar_consola()
     global altura_Actual
     altura_Actual=A
     Respuesta=f"La Altura ha sido actualizada a:" + str(altura_Actual) + "M"
-    print("------------------------------")
+    print("-"*40)
     print(Respuesta)
-    print("------------------------------")
+    #print("------------------------------")
 
 def Act_edad(E):
     limpiar_consola()
     global edad_Actual
     edad_Actual = E
     Respuesta=f"La Edad ha sido actualizada a:" + str(edad_Actual) + "Años"
-    print("------------------------------")
+    print("-"*40)
     print(Respuesta)
-    print("------------------------------")
+    #print("------------------------------")
 
 def Ver_perfil():
     limpiar_consola()
