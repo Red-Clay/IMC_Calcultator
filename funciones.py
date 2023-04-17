@@ -33,17 +33,25 @@ def guardar_csv():
         df.to_csv('Datos_imc.csv', index=False)
 
 def return_range(min,max,valor):
-    #tipo=type(valor)
-    #print(tipo)
+    limpiar_consola()
     try:
+        valor=int(valor)
+        
+    except ValueError:
+        print("Valor incorrecto")
+    tipo=type(valor)
+    #print(tipo)
+    
+    if isinstance(valor,int):
         valor = float(valor)
         if valor >= float(min) and valor <= float(max): 
             return valor
         else:
             #print(f"Rango entre {min}-{max}")
             return 0
-    except ValueError:
+    else:
         return 0
+
     #if (valor > min and valor < max) and (tipo=="<class 'float'>"): 
      #  #re(tipo)
     #else:
