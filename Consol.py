@@ -1,7 +1,5 @@
 import funciones
-
 funciones.limpiar_consola()
-
 while True:
     print("------------------------------")
     print(f"1-Añade tu peso (Kg = {funciones.peso_Actual} )")
@@ -21,18 +19,19 @@ while True:
     else:
         opcion=0
         funciones.limpiar_consola()
-    print("------------------------------")
+
     if opcion == 1:
         _inp = input("Ingresa el peso: ")
-        i_peso=funciones.return_range(_inp,0,100)
+        i_peso=funciones.return_range(0,100,_inp)
+        print(i_peso)
         funciones.Act_peso(i_peso)
     elif opcion == 2:
         _alt = input("Ingresa el altura: ")
-        i_altura=funciones.return_range(_alt,0,4)
+        i_altura=funciones.return_range(0,4,_alt)
         funciones.Act_altura(i_altura)
     elif opcion == 3:
         _ed = input("Ingresa la edad: ")
-        i_edad=funciones.return_range(_ed,0,100)
+        i_edad=funciones.return_range(0,100,_ed)
         funciones.Act_edad(i_edad)
     elif opcion == 4:
         print(f"{funciones.Cal_IMC()}")
