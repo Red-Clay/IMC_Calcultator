@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+
 columnas_csv=["Nombre","Edad","Peso","Altura","IMC","Nivel de peso"]
 
 peso_Actual=70
@@ -26,10 +27,11 @@ def guardar_csv():
         lastvalidindex=df.last_valid_index()
         lastindex=lastvalidindex+1
         #print(lastindex)
-        # Crear una nueva fila como un diccionariohow to deal with convert in python
+        # Crear una nueva fila como un diccionario
         df.loc[lastindex] = [Nombre, edad_Actual, peso_Actual, altura_Actual, imc_Actual,nivel_peso]
         df.to_csv('Datos_imc.csv', index=False)
     else:
+        # Nuevas columnas
         df = pd.DataFrame(columns=columnas_csv)
         df.loc[0] = [Nombre, edad_Actual, peso_Actual, altura_Actual, imc_Actual,nivel_peso]
         df.to_csv('Datos_imc.csv', index=False)
@@ -38,7 +40,6 @@ def return_range(min,max,valor):
     limpiar_consola()
     try:
         valor=float(valor)
-        
     except ValueError:
         print("Valor incorrecto")
     tipo=type(valor)
@@ -53,12 +54,7 @@ def return_range(min,max,valor):
             return 0
     else:
         return 0
-
-    #if (valor > min and valor < max) and (tipo=="<class 'float'>"): 
-     #  #re(tipo)
-    #else:
-        #return 0
-
+    
 def limpiar_consola():
     _so=os.name 
     if _so == "nt":
@@ -77,18 +73,17 @@ def vercsv():
         limpiar_consola()
         print(f"No se encontro o no se ha creado el archivo {archivo}")
 
+def marco(mensaje):
+    marco = "+{:-^48}+".format('')
+    mensaje_central = "|{:^48}|".format(mensaje)
+    Respuesta= marco +"\n"+ mensaje_central + "\n" + marco
+    return Respuesta
 def Act_peso(P):
     limpiar_consola()
     global peso_Actual
     peso_Actual=P
-    Respuesta=f"La Peso ha sido actualizada a:" + str(peso_Actual) + "Kg"
-
-    marco = "+{:-^48}+".format('')
-    mensaje_central = "|{:^48}|".format(Respuesta)
-
-    print(marco)
-    print(mensaje_central)
-    print(marco)
+    Respuesta=f"Peso Actualizado: " + str(peso_Actual) + " Kg"
+    print(marco(Respuesta))
 
     #print("------------------------------")
 
@@ -96,26 +91,24 @@ def Act_altura(A):
     limpiar_consola()
     global altura_Actual
     altura_Actual=A
-    Respuesta=f"La Altura ha sido actualizada a:" + str(altura_Actual) + "M"
-    print("-"*40)
-    print(Respuesta)
+    Respuesta=f"Altura Actualizada: " + str(altura_Actual) + " M"
+    print(marco(Respuesta))
     #print("------------------------------")
 
 def Act_edad(E):
     limpiar_consola()
     global edad_Actual
     edad_Actual = E
-    Respuesta=f"La Edad ha sido actualizada a:" + str(edad_Actual) + "Años"
-    print("-"*40)
-    print(Respuesta)
+    Respuesta=f"Edad Actualizada: " + str(edad_Actual) + " Años"
+    print(marco(Respuesta))
     #print("------------------------------")
 
 def Ver_perfil():
     limpiar_consola()
-    print(f"Peso Actual: {peso_Actual} Kg\n")
-    print(f"Altura Actual: {altura_Actual}\n")
-    print(f"Edad Actual: {edad_Actual}\n")
-    print(f"IMC Actual: {imc_Actual}\n")    
+    print(f"Peso : {peso_Actual} Kg\n")
+    print(f"Altura : {altura_Actual}\n")
+    print(f"Edad : {edad_Actual}\n")
+    print(f"IMC : {imc_Actual}\n")    
 
 def Cal_IMC():
     global peso_Actual
@@ -124,15 +117,14 @@ def Cal_IMC():
     global imc_Actual
     global nivel_peso
     imc_Actual = float(peso_Actual)/(float(altura_Actual)*float(altura_Actual))
-    Respuesta=f"Su IMC es de :" + str(imc_Actual)
+    Respuesta=f"IMC Actualizado: " + str(imc_Actual)
+    print(marco(Respuesta))
 
     if imc_Actual<18.5:
-        nivel_peso="Peso INFERIOR al normal"
+        nivel_peso="INFERIOR al normal"
     elif imc_Actual>=18.5 and imc_Actual<=24.9:
         nivel_peso="Normal"
     elif imc_Actual>=25 and imc_Actual<=29.9:
         nivel_peso="SUPERIOR al normal"
     elif imc_Actual>=30:
         nivel_peso="Obeso"
-
-    return Respuesta

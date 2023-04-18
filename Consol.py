@@ -5,7 +5,7 @@ while True:
     print("-"*40)
     print(f"1-Peso....(Kilogramos = {funciones.peso_Actual} )")
     print(f"2-Altura..(Metros = {funciones.altura_Actual} )")
-    print(f"3-Edad....(años = {funciones.edad_Actual} )")
+    print(f"3-Edad....(Años = {funciones.edad_Actual} )")
     print(f"4-IMC.....(Indice de Masa Corporal = {funciones.imc_Actual} )")
     print("5-Perfil")
     print("6-Save")
@@ -34,7 +34,7 @@ while True:
         x=funciones.return_range(0,100,_ed)
         if x != 0 : funciones.Act_edad(x)
     elif opcion == 4:
-        print(f"{funciones.Cal_IMC()}")
+        funciones.Cal_IMC()
     elif opcion == 5:
         funciones.Ver_perfil()
     elif opcion == 6:
