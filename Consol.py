@@ -15,14 +15,7 @@ while True:
     print("-"*40)
 #Un añadido copiado, pero con flujos logicos faciles de entender
     opc = input("Elige una opción: ")
-    while True:
-        input_string = input("Enter an integer: ")
-        if len(input_string) > 1:
-            input_string = input_string[:-1]
-            input_integer = int(input_string)
-            break
-        else:
-            print("Invalid input. Please enter a single digit integer.")
+
 
 
     if opc in ["1","2","3","4","5","6","7","8"]:
