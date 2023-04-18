@@ -2,5 +2,4 @@
 30 Minutos
 ```bash
 pip install pandas
-
 '''
