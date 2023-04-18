@@ -23,11 +23,11 @@ while True:
 
     if opcion == 1:
         _inp = input("Ingresa el peso: ")
-        x=funciones.return_range(0,100,_inp)
+        x=funciones.return_range(0,150,_inp)
         if x != 0 :funciones.Act_peso(x)
     elif opcion == 2:
         _alt = input("Ingresa el altura: ")
-        x = funciones.return_range(0,4,_alt)
+        x = funciones.return_range(0,2,_alt)
         if x != 0 : funciones.Act_altura(x)
     elif opcion == 3:
         _ed = input("Ingresa la edad: ")

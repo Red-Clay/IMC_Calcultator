@@ -1,4 +1,6 @@
-Nombre,Edad,Peso,Altura,IMC
-exit,15.0,70.0,1.7,0.0
-Michel,23.0,95.0,1.8,29.320987654320987
-t,15.0,70.0,1.7,0.0
+Nombre,Edad,Peso,Altura,IMC,Nivel de peso
+ty,15,70.0,1.7,24.221453287197235,Peso Normal
+po,15,20.0,1.7,24.221453287197235,Peso Normal
+io,15,20.0,1.7,6.920415224913495,Peso INFERIOR al normal
+kk,15,90.0,1.7,31.14186851211073,Obeso
+nn,15,85.0,1.7,29.411764705882355,Peso SUPERIOR al normal

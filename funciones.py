@@ -27,11 +27,11 @@ def guardar_csv():
         lastindex=lastvalidindex+1
         #print(lastindex)
         # Crear una nueva fila como un diccionariohow to deal with convert in python
-        df.loc[lastindex] = [Nombre, edad_Actual, peso_Actual, altura_Actual, imc_Actual]
+        df.loc[lastindex] = [Nombre, edad_Actual, peso_Actual, altura_Actual, imc_Actual,nivel_peso]
         df.to_csv('Datos_imc.csv', index=False)
     else:
         df = pd.DataFrame(columns=columnas_csv)
-        df.loc[0] = [Nombre, edad_Actual, peso_Actual, altura_Actual, imc_Actual]
+        df.loc[0] = [Nombre, edad_Actual, peso_Actual, altura_Actual, imc_Actual,nivel_peso]
         df.to_csv('Datos_imc.csv', index=False)
 
 def return_range(min,max,valor):
@@ -122,6 +122,17 @@ def Cal_IMC():
     global altura_Actual
     limpiar_consola()
     global imc_Actual
+    global nivel_peso
     imc_Actual = float(peso_Actual)/(float(altura_Actual)*float(altura_Actual))
     Respuesta=f"Su IMC es de :" + str(imc_Actual)
+
+    if imc_Actual<18.5:
+        nivel_peso="Peso INFERIOR al normal"
+    elif imc_Actual>=18.5 and imc_Actual<=24.9:
+        nivel_peso="Normal"
+    elif imc_Actual>=25 and imc_Actual<=29.9:
+        nivel_peso="SUPERIOR al normal"
+    elif imc_Actual>=30:
+        nivel_peso="Obeso"
+
     return Respuesta
