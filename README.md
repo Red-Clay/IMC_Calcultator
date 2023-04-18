@@ -1,5 +1,5 @@
 # IMC_Calcultator
 30 Minutos
 ```bash
-pip install pandas
+python -m pip install pandas
 
